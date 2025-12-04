@@ -1,7 +1,8 @@
 package apc.appcradle.generics
 
 /**
-```
+ * ### Решение
+```kotlin
 inline fun <reified T> isType(element: Any): Boolean {
 return element is T
 }
@@ -30,14 +31,14 @@ return T::class.java.newInstance()
 }
 ```
 - Фильтрация списка по типу
-```
+```kotlin
 inline fun <reified T> List<*>.filterByType(): List<T> {
 return this.filter { it is T }.map { it as T }
 }
 ```
 
 - Проверка типа и приведение
-```
+```kotlin
 inline fun <reified T> Any.castOrNull(): T? = this as? T
  ```
  **/
