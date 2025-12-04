@@ -85,5 +85,32 @@ class InlineAnswer
  *Почему так происходит?
  *- В inline-функции код лямбды встраивается прямо в main(), поэтому return относится к main()
  *- В обычной функции лямбда компилируется в отдельный объект, и return пытался бы вернуться из этой лямбды (а не из main()), что не имеет смысла
+ *
+ * ### Crossinline параметры:
+ * А что если мы не хотим разрешать non-local return в inline-функции? Используем crossinline:
+ *
+ * ```kotlin
+ * inline fun inlineFunc(crossinline block: () -> Unit) {
+ *     println("Начало")
+ *     block()  // Теперь block не может содержать non-local return
+ *     println("Конец")
+ * }
+ *
+ * fun main() {
+ *     inlineFunc {
+ *         return  // ОШИБКА: Can't inline 'block' here: it may contain non-local returns
+ *     }
+ * }
+ * ```
  */
 class NonLocalReturnAnswer
+
+/**
+ *```
+ * inline fun process(firstBlock: () -> Unit, noinline secondBlock: () -> Unit) {
+ *     firstBlock()
+ *     secondBlock()
+ * }
+ * ```
+ */
+class NoInlineAnswer
