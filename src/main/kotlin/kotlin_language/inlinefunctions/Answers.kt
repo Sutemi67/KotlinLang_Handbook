@@ -1,4 +1,4 @@
-package inlinefunctions
+package kotlin_language.inlinefunctions
 
 /**
  *

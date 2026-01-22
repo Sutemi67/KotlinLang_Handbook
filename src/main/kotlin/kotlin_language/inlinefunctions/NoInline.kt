@@ -1,4 +1,4 @@
-package apc.appcradle.inlinefunctions
+package kotlin_language.inlinefunctions
 
 /**
  * #### Что означает модификатор noinline и когда он используется?
@@ -9,7 +9,7 @@ package apc.appcradle.inlinefunctions
  *
  * Напишите пример функции process с двумя лямбда-параметрами, где первый — inline, а второй — noinline.
  *
- * Ответ - [inlinefunctions.NoInlineAnswer]
+ * Ответ - [NoInlineAnswer]
  */
 fun main() {
 

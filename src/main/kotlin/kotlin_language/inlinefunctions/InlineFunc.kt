@@ -1,4 +1,4 @@
-package inlinefunctions
+package kotlin_language.inlinefunctions
 
 /**
  *В чем ключевое отличие в работе обычной функции и inline-функции при передаче лямбда-выражения?
