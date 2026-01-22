@@ -24,7 +24,7 @@ fun main() {
     val c = 2 //стоит каждый мегабайт сверх лимита
     val d = 3 //всего мегабайт будет потрачено
 
-    fun calculate(input: List<Int?>): Int {
+   fun calculate(input: List<Int?>): Int {
         val limit = input[a]!!
         val overlimit = (input[d]!! - input[b]!!) * input[c]!!
         return if (overlimit > 0) limit + overlimit else limit
