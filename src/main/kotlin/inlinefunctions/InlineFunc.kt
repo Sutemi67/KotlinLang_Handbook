@@ -1,4 +1,4 @@
-package apc.appcradle.inlinefunctions
+package inlinefunctions
 
 /**
  *В чем ключевое отличие в работе обычной функции и inline-функции при передаче лямбда-выражения?

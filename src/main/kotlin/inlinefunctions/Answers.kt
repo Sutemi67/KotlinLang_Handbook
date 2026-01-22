@@ -1,4 +1,4 @@
-package apc.appcradle.inlinefunctions
+package inlinefunctions
 
 /**
  *
@@ -10,14 +10,14 @@ package apc.appcradle.inlinefunctions
  *     println("Конец")
  * }
  *
- * fun main() {
+ * fun tinkoff_contest.main() {
  *     nonInlineFunc { println("Лямбда") }
  * }
  * ```
  * ##### После компиляции (примерно):
  *
  * ```kotlin
- * fun main() {
+ * fun tinkoff_contest.main() {
  *     // Создается объект анонимного класса для лямбды
  *     val block$lambda = object : Function0<Unit> {
  *         override fun invoke() {
@@ -41,14 +41,14 @@ package apc.appcradle.inlinefunctions
  *     println("Конец")
  * }
  *
- * fun main() {
+ * fun tinkoff_contest.main() {
  *     inlineFunc { println("Лямбда") }
  * }
  * ```
  * #### После компиляции (примерно):
  *
  * ```kotlin
- * fun main() {
+ * fun tinkoff_contest.main() {
  *     // Код встраивается напрямую
  *     println("Начало")
  *     println("Лямбда")  // Тело лямбды встроено
@@ -73,18 +73,18 @@ class InlineAnswer
  *     println("Конец inlineFunc") // Не выполнится, если в block был return
  * }
  *
- * fun main() {
- *     println("Начало main")
+ * fun tinkoff_contest.main() {
+ *     println("Начало tinkoff_contest.main")
  *     inlineFunc {
  *         println("В лямбде")
- *         return  // non-local return - завершает main()
+ *         return  // non-local return - завершает tinkoff_contest.main()
  *     }
- *     println("Конец main") // Не выполнится!
+ *     println("Конец tinkoff_contest.main") // Не выполнится!
  * }
  * ```
  *Почему так происходит?
- *- В inline-функции код лямбды встраивается прямо в main(), поэтому return относится к main()
- *- В обычной функции лямбда компилируется в отдельный объект, и return пытался бы вернуться из этой лямбды (а не из main()), что не имеет смысла
+ *- В inline-функции код лямбды встраивается прямо в tinkoff_contest.main(), поэтому return относится к tinkoff_contest.main()
+ *- В обычной функции лямбда компилируется в отдельный объект, и return пытался бы вернуться из этой лямбды (а не из tinkoff_contest.main()), что не имеет смысла
  *
  * ### Crossinline параметры:
  * А что если мы не хотим разрешать non-local return в inline-функции? Используем crossinline:
@@ -96,7 +96,7 @@ class InlineAnswer
  *     println("Конец")
  * }
  *
- * fun main() {
+ * fun tinkoff_contest.main() {
  *     inlineFunc {
  *         return  // ОШИБКА: Can't inline 'block' here: it may contain non-local returns
  *     }

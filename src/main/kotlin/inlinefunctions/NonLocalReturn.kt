@@ -5,11 +5,11 @@ package apc.appcradle.inlinefunctions
 Напишите пример, где внутри лямбды, переданной в inline-функцию, используется return, который завершает внешнюю функцию:
 Объясните результат. А что если бы функция inlineFunc была не inline?
 
-Ответ - [NonLocalReturnAnswer]
+Ответ - [inlinefunctions.NonLocalReturnAnswer]
  **/
 
 fun main() {
-    println("Start main")
+    println("Start tinkoff_contest.main")
 //    inlineFunc {
 //        println("In lambda print")
 //        return  // Что произойдет?
@@ -18,7 +18,7 @@ fun main() {
 //        println("In lambda print")
 //        return  // Что произойдет?
 //    }
-    println("End main")  // Будет ли выполнено?
+    println("End tinkoff_contest.main")  // Будет ли выполнено?
 }
 
 inline fun inlineFunc(block: () -> Unit) {

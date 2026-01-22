@@ -9,7 +9,7 @@ package apc.appcradle.inlinefunctions
  *
  * Напишите пример функции process с двумя лямбда-параметрами, где первый — inline, а второй — noinline.
  *
- * Ответ - [NoInlineAnswer]
+ * Ответ - [inlinefunctions.NoInlineAnswer]
  */
 fun main() {
 
